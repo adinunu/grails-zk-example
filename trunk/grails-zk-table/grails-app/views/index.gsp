@@ -82,7 +82,7 @@
         </div>
         <div id="pageBody">
             <h1>Welcome to Grails ZK table example</h1>
-            Click <g:link action="table" controller="employee">here</g:link> to view the table example
+            Click <g:link action="index" controller="employee">here</g:link> to view the table example
         </div>
     </body>
 </html>
