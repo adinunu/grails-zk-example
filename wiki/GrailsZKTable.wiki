@@ -5,10 +5,11 @@
 This tutorial gives a short introduction how to create a simple table filled with real data.
 
 Mainly it's a wrap up of this tutorial: http://code.google.com/p/zkgrails/wiki/LoadOnDemand
+You can find the source code of this tutorial [http://code.google.com/p/grails-zk-example/source/browse/trunk/grails-zk-table here] 
 
+= Step by Step tutorial =
 
-
-= Step 1: Install grails =
+== Step 1: Install grails ==
   * Download and install the latest grails package: http://grails.org/Download
 
 = Step 2Create a new project =
