@@ -46,7 +46,7 @@ class Employee {
 
 == Step 4: Create example values during startup ==
 
-Open the BootStrap.groovy and add the following content:
+Open the `BootStrap.groovy` and add the following content:
 
 {{{
 import org.psm.Employee
@@ -62,3 +62,8 @@ class BootStrap {
   }
 }
 }}}
+
+==Step 5: Create the ZUL page for the table==
+Execute `grails create-zul org.psm.employee`
+
+This will create a file `employee.zul` in the directory `WEB-INF/org/psm/` and a composer `EmployeeComposer.groovy` in the directory `grails-app/org/psm/`
