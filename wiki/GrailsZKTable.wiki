@@ -135,7 +135,7 @@ Open the file `list.zul` and add the following content:
  
 The page uses the following ZK components:
   * [http://books.zkoss.org/wiki/ZK_Component_Reference/Containers/Window Window]: Renders a simple window containing the table and the paging component
-  * [http://books.zkoss.org/wiki/ZK_Component_Reference/Data/Listbox Listbox]: A table, which will contain a row for every employee and 3 cells for the attributes "id", "full name" and "username" of an employee 
+  * [http://books.zkoss.org/wiki/ZK_Component_Reference/Data/Listbox Listbox]: A table, which will contain a row for every employee with 3 cells in each row for the attributes "id", "full name" and "username" of an employee 
   * [http://books.zkoss.org/wiki/ZK_Component_Reference/Data/Listbox/Listheader Listheader]: 3 Header elements for each row of the table
   * [http://books.zkoss.org/wiki/ZK_Component_Reference/Supplementary/Paging Paging]: Element holding paging informations. The data required to init this component is generated in the Composer
 
@@ -191,6 +191,20 @@ class ListComposer extends GrailsComposer {
 }
 
 }}}
+
+The two attributes `lstEmployee` and `pagEmployee` represent the ZUL components with the same IDs, in this case the listbox component and the paging component. 
+
+So everytime you want to have direct access to a ZUL component, just give the component a unique ID and add an attribute with the exact same name as the ID of the component in the ZUL page.
+
+If you want to react on an event, just add a method with the pattern
+
+{{{
+def <actionName>_<elementId>() {
+Your code here
+}
+}}}
+
+If the Listenermethod has a parameter like for example "SelectEvent", just add the parameter to the method.
 
 ==Step 10: Link the GSP page with the ZUL page==
 Add the following content to the `list.gsp` page
