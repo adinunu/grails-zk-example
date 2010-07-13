@@ -85,11 +85,13 @@ Now create an empty GSP page `grails-app/views/employee/list.gsp`
 
 
 
-==Step 7: Create the ZUL page for the table==
+==Step 7: Create the basic ZUL page + Composer for the table==
 
 Execute `grails create-zul org.psm.employee.list`
 
 This will create a file `list.zul` in the directory `web-app/org/psm/employee/` and a composer `ListComposer.groovy` in the directory `grails-app/org/psm/employee/`
+
+==Step 8: Change the ZUL page ==
 
 Open the file `list.zul` and add the following content:
 
@@ -126,6 +128,9 @@ Open the file `list.zul` and add the following content:
 
 </zk>
 }}}
+
+
+== Step 9: Change the Composer
 
 Now open the file `ListComposer.groovy` and add the following content:
 
@@ -174,3 +179,13 @@ class ListComposer extends GrailsComposer {
 }
 
 }}}
+
+== Step 10: Start the app==
+Now everything should be setup to start the application.
+
+Execute `grails run-app` to start up the application.
+
+Now open the url http://localhost:8080/grails-zk-table/employee
+
+If everything works as expected, you should now see a table of all employees with paging.
+If you click on a row, a popup should come up with the information, what row you have selected
