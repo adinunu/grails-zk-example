@@ -232,7 +232,7 @@ The `<z:head/>` tag is required to load all CSS and javascript files related to 
 
 The `<z:body/>` tag is required to render the real content of the zul page
 
-There is the possibility to use the same naming resolving strategy for the *.zul pages as you expect grails to resolve GSP pages. Here's a [http://felipecypriano.com/blog/2009/12/10/grails-with-zk-embedding-zul-in-gsp/ blog article] about this feature
+There is the possibility to use the same naming resolving strategy for the zul pages as you expect grails to resolve GSP pages. Here's a [http://felipecypriano.com/blog/2009/12/10/grails-with-zk-embedding-zul-in-gsp/ blog article] about this feature
 
 
 
