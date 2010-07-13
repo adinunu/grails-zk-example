@@ -8,6 +8,8 @@ Mainly it's a wrap up of this tutorial: http://code.google.com/p/zkgrails/wiki/L
 
 You can find the source code of this tutorial [http://code.google.com/p/grails-zk-example/source/browse/trunk/grails-zk-table here] 
 
+http://grails-zk-example.googlecode.com/svn/wiki/images/grails-zk-table.png
+
 = Step by Step tutorial =
 
 == Step 1: Install grails ==
