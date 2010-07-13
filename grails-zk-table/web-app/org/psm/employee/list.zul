@@ -11,12 +11,6 @@
     <window apply="org.psm.employee.ListComposer" border="normal"  width="700px"  minheight="350">
         <caption label="All employees"/>
 
-        <hbox>
-            <image src="${z.resource(dir:'images', file:'ZK-Logo.gif')}"/>
-            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
-
-        </hbox>
-
         <listbox id="lstEmployee" width="100%" checkmark="true">
             <listhead sizable="true">
                 <listheader label="ID" sort="auto"/>
