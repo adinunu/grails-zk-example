@@ -2,5 +2,9 @@ package org.psm
 
 class EmployeeController {
 
-    def table = { }
+  def index = {
+    redirect(action: "list")
+  }
+
+  def list = { }
 }
