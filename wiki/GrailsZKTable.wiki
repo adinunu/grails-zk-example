@@ -126,3 +126,51 @@ Open the file `list.zul` and add the following content:
 
 </zk>
 }}}
+
+Now open the file `ListComposer.groovy` and add the following content:
+
+{{{
+package org.psm.employee
+
+import org.zkoss.zkgrails.*
+import org.zkoss.zk.ui.event.SelectEvent
+import org.psm.Employee
+import org.zkoss.zk.ui.event.ForwardEvent
+
+class ListComposer extends GrailsComposer {
+
+    def lstEmployee
+  def pagEmployee
+
+  def afterCompose = { c ->
+    pagEmployee.totalSize = Employee.count()
+    redraw()
+  }
+
+  def onPaging_pagEmployee(ForwardEvent fe) {
+    def e = fe.origin
+    redraw(e.activePage)
+  }
+
+  def redraw(page = 0) {
+    def list = Employee.list(offset: page * pagEmployee.pageSize,
+            max: pagEmployee.pageSize)
+
+    lstEmployee.clear()
+    lstEmployee.append {
+      list.each { e ->
+        listitem(value: e) {
+          listcell(label: e.id)
+          listcell(label: e.fullname)
+          listcell(label: e.username)
+        }
+      }
+    }
+  }
+
+  def onSelect_lstEmployee(SelectEvent se) {
+    alert("Selection detected! Selected items: ${se.selectedItems*.value}")
+  }
+}
+
+}}}
