@@ -130,7 +130,7 @@ Open the file `list.zul` and add the following content:
 }}}
 
 
-== Step 9: Change the Composer
+== Step 9: Change the Composer==
 
 Now open the file `ListComposer.groovy` and add the following content:
 
@@ -180,7 +180,14 @@ class ListComposer extends GrailsComposer {
 
 }}}
 
-== Step 10: Start the app==
+==Step 10: Link the GSP page with the ZUL page==
+Add the following content to the `list.gsp` page
+{{{
+<z:head zul="/org/psm/employee/list.zul"/>
+<z:body zul="/org/psm/employee/list.zul"/>
+}}}
+
+== Step 11: Start the app==
 Now everything should be setup to start the application.
 
 Execute `grails run-app` to start up the application.
