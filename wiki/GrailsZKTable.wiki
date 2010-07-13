@@ -1,0 +1,19 @@
+#summary How to create simple table with pagination based on a grails domain class
+
+= Introduction =
+
+This tutorial gives a short introduction how to create a simple table filled with real data.
+
+Mainly it's a wrap up of this tutorial: http://code.google.com/p/zkgrails/wiki/LoadOnDemand
+
+
+
+= Step 1: Install grails =
+  * Download and install the latest grails package: http://grails.org/Download
+
+= Step 2Create a new project =
+
+Open up a terminal and create a new project by typing 
+{{{
+grails create-app grails-zk-table
+}}}
