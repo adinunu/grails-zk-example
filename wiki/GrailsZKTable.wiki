@@ -131,6 +131,16 @@ Open the file `list.zul` and add the following content:
 </zk>
 }}}
 
+ The window attribute `apply` must match the full qualified class name of the composer
+ 
+The page uses the following ZK components:
+  * [http://books.zkoss.org/wiki/ZK_Component_Reference/Containers/Window Window]: Renders a simple window containing the table and the paging component
+  * [http://books.zkoss.org/wiki/ZK_Component_Reference/Data/Listbox Listbox]: A table, which will contain a row for every employee and 3 cells for the attributes "id", "full name" and "username" of an employee 
+  * [http://books.zkoss.org/wiki/ZK_Component_Reference/Data/Listbox/Listheader Listheader]: 3 Header elements for each row of the table
+  * [http://books.zkoss.org/wiki/ZK_Component_Reference/Supplementary/Paging Paging]: Element holding paging informations. The data required to init this component is generated in the Composer
+
+The data rows of the table are added by the Composer in the next step
+
 
 == Step 9: Change the Composer==
 
