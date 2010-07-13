@@ -207,9 +207,34 @@ If the Listenermethod has a parameter like for example "SelectEvent", just add t
 ==Step 10: Link the GSP page with the ZUL page==
 Add the following content to the `list.gsp` page
 {{{
-<z:head zul="/org/psm/employee/list.zul"/>
-<z:body zul="/org/psm/employee/list.zul"/>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="layout" content="main" />
+        <z:head zul="/org/psm/employee/list.zul"/>
+        <title>Employees</title>
+    </head>
+    <body>
+        <div class="nav">
+            <span class="menuButton"><a class="home" href="${resource(dir:'')}">Home</a></span>
+        </div>
+        <div class="body">
+            <g:if test="${flash.message}">
+            <div class="message">${flash.message}</div>
+            </g:if>
+            <z:body zul="/org/psm/employee/list.zul"/>
+        </div>
+    </body>
+</html>
 }}}
+
+The `<z:head/>` tag is required to load all CSS and javascript files related to the list.zul page
+
+The `<z:body/>` tag is required to render the real content of the zul page
+
+There is the possibility to use the same naming resolving strategy for the *.zul pages as you expect grails to resolve GSP pages. Here's a [http://felipecypriano.com/blog/2009/12/10/grails-with-zk-embedding-zul-in-gsp/ blog article] about this feature
+
+
 
 == Step 11: Start the app==
 Now everything should be setup to start the application.
