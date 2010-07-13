@@ -19,3 +19,27 @@ Open up a terminal and create a new project by typing
 {{{
 grails create-app grails-zk-table
 }}}
+
+== Step 3: Install ZK Plugin ==
+Enter the new directory `grails-zk-table` and execute
+{{{
+grails install-plugin zk
+}}}
+
+== Step 4: Create a simple domain class ==
+Execute `grails create-domain-class org.psm.Employee` in order to create a domain class 'Employee.groovy'
+
+Open the file `grails-app/org/psm/Employee.groovy` and add the followin content:
+
+{{{
+package org.psm
+
+class Employee {
+
+  String username
+  String fullname
+
+  static constraints = {
+  }
+}
+}}}
