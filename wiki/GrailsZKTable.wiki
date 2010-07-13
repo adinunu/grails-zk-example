@@ -44,7 +44,7 @@ class Employee {
 }
 }}}
 
-== Step 4: Create example values during startup ==
+== Step 5: Create example values during startup ==
 
 Open the `BootStrap.groovy` and add the following content:
 
@@ -63,7 +63,66 @@ class BootStrap {
 }
 }}}
 
-==Step 5: Create the ZUL page for the table==
-Execute `grails create-zul org.psm.employee`
+==Step 6: Create a controller and an GSP Page==
 
-This will create a file `employee.zul` in the directory `web-app/org/psm/` and a composer `EmployeeComposer.groovy` in the directory `grails-app/org/psm/`
+Execute `grails create-controller org.psm.Employee` to create a new grails controller
+
+Add the following code to the grails controller
+{{{
+package org.psm
+
+class EmployeeController {
+
+  def index = {
+    redirect(action: "list")
+  }
+
+  def list = { }
+}
+}}}
+
+Now create an empty GSP page `grails-app/views/employee/list.gsp`
+
+
+
+==Step 7: Create the ZUL page for the table==
+
+Execute `grails create-zul org.psm.employee.list`
+
+This will create a file `list.zul` in the directory `web-app/org/psm/employee/` and a composer `ListComposer.groovy` in the directory `grails-app/org/psm/employee/`
+
+Open the file `list.zul` and add the following content:
+
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="org.psm.employee.ListComposer" border="normal"  width="700px"  minheight="350">
+        <caption label="All employees"/>
+
+        <hbox>
+            <image src="${z.resource(dir:'images', file:'ZK-Logo.gif')}"/>
+            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+
+        </hbox>
+
+        <listbox id="lstEmployee" width="100%" checkmark="true">
+            <listhead sizable="true">
+                <listheader label="ID" sort="auto"/>
+                <listheader label="Full Name" sort="auto"/>
+                <listheader label="User Name" sort="auto"/>
+            </listhead>
+        </listbox>
+        <paging id="pagEmployee" pageSize="30"/>
+
+    </window>
+
+</zk>
+}}}
