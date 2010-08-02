@@ -6,7 +6,7 @@ This tutorial gives a short introduction how to create a simple table filled wit
 
 Mainly it's a wrap up of this tutorial: http://code.google.com/p/zkgrails/wiki/LoadOnDemand
 
-You can find the source code of this tutorial [http://code.google.com/p/grails-zk-example/source/browse/trunk/grails-zk-table here] 
+You can find the source code of this tutorial [http://code.google.com/p/grails-zk-example/source/browse/tags/grails_zk_table_1_0/ here] 
 
 http://grails-zk-example.googlecode.com/svn/wiki/images/grails-zk-table.png
 
